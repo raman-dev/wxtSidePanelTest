@@ -22,6 +22,9 @@ export default defineBackground(() => {
       console.error(error);
   });
 
+  //side panels don't auto open
+  //and don't auto close when changing tabs
+  //once open remain open
   browser.commands.onCommand.addListener(async (command) => {
     if (command !== 'open_panel') return;
     console.log('received.open_panel.command');
